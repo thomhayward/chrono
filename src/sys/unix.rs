@@ -98,7 +98,7 @@ pub fn time_to_local_tm(sec: i64, tm: &mut Tm) {
             }
         };
         #[cfg(not(any(target_os = "solaris", target_os = "illumos")))]
-        let gmtoff = out.tm_gmtoff;
+        let gmtoff = 0; // out.tm_gmtoff;
         tm_to_rust_tm(&out, gmtoff as i32, tm);
     }
 }
